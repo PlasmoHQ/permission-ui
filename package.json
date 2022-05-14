@@ -1,0 +1,47 @@
+{
+  "name": "@plasmohq/permission-ui",
+  "version": "0.0.1",
+  "description": "A set of react component to control extension permission",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/index.js",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:compile": "tsup src/index.tsx --watch --sourcemap",
+    "dev:test": "jest --watch",
+    "build": "tsup src/index.tsx  --dts-resolve --format esm --minify --clean",
+    "test": "jest",
+    "prepublishOnly": "run-s build"
+  },
+  "author": "Plasmo Corp. <foss@plasmo.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PlasmoHQ/puro.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "context",
+    "providers"
+  ],
+  "peerDependencies": {
+    "react": ">=17 || >=18"
+  },
+  "devDependencies": {
+    "@jest/globals": "28.1.0",
+    "@plasmo-corp/rps": "workspace:*",
+    "@trivago/prettier-plugin-sort-imports": "3.2.0",
+    "@types/node": "17.0.33",
+    "@types/react": "18.0.9",
+    "jest": "28.1.0",
+    "prettier": "2.6.2",
+    "react": "18.1.0",
+    "ts-jest": "28.0.2",
+    "tsup": "5.12.7",
+    "typescript": "4.6.4"
+  }
+}
