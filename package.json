@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "dev": "run-p dev:*",
-    "dev:compile": "tsup src/index.tsx --watch --sourcemap",
-    "dev:test": "jest --watch",
+    "dev:compile": "tsup src/index.tsx --dts-resolve --format esm --watch --sourcemap",
+    "dev:test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "build": "tsup src/index.tsx  --dts-resolve --format esm --minify --clean",
-    "test": "jest",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "prepublishOnly": "run-s build"
   },
   "author": "Plasmo Corp. <foss@plasmo.com>",
@@ -33,10 +33,11 @@
   },
   "devDependencies": {
     "@jest/globals": "28.1.0",
-    "@plasmo-corp/rps": "workspace:*",
+    "@plasmohq/rps": "workspace:*",
     "@trivago/prettier-plugin-sort-imports": "3.2.0",
     "@types/node": "17.0.33",
     "@types/react": "18.0.9",
+    "cross-env": "7.0.3",
     "jest": "28.1.0",
     "prettier": "2.6.2",
     "react": "18.1.0",
