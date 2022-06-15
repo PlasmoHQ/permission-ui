@@ -15,7 +15,7 @@
     "dev:test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "build": "tsup src/index.tsx  --dts-resolve --format esm --minify --clean",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
-    "prepare": "run-s build"
+    "prepublishOnly": "run-s build"
   },
   "author": "Plasmo Corp. <foss@plasmo.com>",
   "repository": {
