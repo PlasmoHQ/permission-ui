@@ -1,4 +1,4 @@
-import React, { useReducer } from "react"
+import { useReducer } from "react"
 
 export function StorageToggle() {
   const [isEnable, enable] = useReducer(() => true, false)
